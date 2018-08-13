@@ -67,10 +67,6 @@ class Foods extends Component {
     }
   }
 
-  // searchUpdated = term => {
-  //   this.setState({ searchTerm: term });
-  // };
-
   onChangeHandler = e => {
     this.setState({
       searchTerm: e.target.value
@@ -78,14 +74,10 @@ class Foods extends Component {
   };
 
   render() {
-    // const filteredFoods = this.state.foods.filter(
-    //   createFilter(this.state.searchTerm, KEYS_TO_FILTERS)
-    // );
-
     const filteredFoods = this.state.foods.filter(
       food =>
         this.state.searchTerm === "" ||
-        food.name.toLowerCase().includes(this.state.searchTerm)
+        food.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
     );
 
     if (this.state.isLoading) {
@@ -95,7 +87,7 @@ class Foods extends Component {
         <div>
           <h4>{this.state.pageTitle}</h4>
           <div className="row">
-            <div className="input-field col s6 offset-s3 m4 offset-m4">
+            <div className="input-field col s8 offset-s2 m4 offset-m4">
               <input
                 id="search"
                 type="text"
