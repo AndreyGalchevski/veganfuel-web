@@ -34,7 +34,7 @@ class Foods extends Component {
   };
 
   baseUrl =
-    "http://api.nal.usda.gov/ndb/nutrients/?format=json&api_key=QQ4HZzADiGZBvTyk5606Fb1axjFItcxuhYfct882&sort=c";
+    "http://api.nal.usda.gov/ndb/nutrients/?format=json&max=100&api_key=QQ4HZzADiGZBvTyk5606Fb1axjFItcxuhYfct882&sort=c";
 
   componentDidMount() {
     this.createUrl();
@@ -99,7 +99,7 @@ class Foods extends Component {
             </div>
             {filteredFoods.map(food => (
               <div key={food.name} className="col s12 m6 offset-m3">
-                <div className="card z-depth-3">
+                <div className="card z-depth-4">
                   <div className="card-content blue-text">
                     <div>
                       <i className="small material-icons">short_text</i>
@@ -107,12 +107,12 @@ class Foods extends Component {
                     <p className="card-title">{food.name}</p>
                     <p>100 grams</p>
                   </div>
-                  <div className="card-action">
-                    <div>
+                  <div className="card-action grey darken-3">
+                    <div className="white-text">
                       <i className="small material-icons">show_chart</i>
                     </div>
-                    <span>Nutrient Content: </span>
-                    <span>
+                    <span className="white-text">Nutrient Content: </span>
+                    <span className="white-text">
                       {food.nutrients[0].gm}{" "}
                       <small>{food.nutrients[0].unit}</small>
                     </span>
