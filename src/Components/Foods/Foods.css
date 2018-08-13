@@ -1,0 +1,15 @@
+.card-action {
+  font-size: 20px;
+}
+
+.search-input {
+  margin-bottom: 20px;
+}
+
+input#search {
+  border-bottom-color: #2196f3 !important;
+}
+
+label.active {
+  color: #2196f3 !important;
+}
