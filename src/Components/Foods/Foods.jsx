@@ -34,7 +34,7 @@ class Foods extends Component {
   };
 
   baseUrl =
-    "http://api.nal.usda.gov/ndb/nutrients/?format=json&max=100&api_key=QQ4HZzADiGZBvTyk5606Fb1axjFItcxuhYfct882&sort=c";
+    "http://api.nal.usda.gov/ndb/nutrients/?format=json&max=1500&api_key=QQ4HZzADiGZBvTyk5606Fb1axjFItcxuhYfct882&sort=c";
 
   componentDidMount() {
     this.createUrl();
@@ -62,6 +62,7 @@ class Foods extends Component {
         pageTitle: response.data.report.foods[0].nutrients[0].nutrient
       });
       this.setState({ isLoading: false });
+      console.log(this.state.foods.length);
     } catch (error) {
       console.log(error);
     }
@@ -81,7 +82,22 @@ class Foods extends Component {
     );
 
     if (this.state.isLoading) {
-      return <div>Loading...</div>;
+      return (
+        <div className="sk-circle">
+          <div className="sk-circle1 sk-child" />
+          <div className="sk-circle2 sk-child" />
+          <div className="sk-circle3 sk-child" />
+          <div className="sk-circle4 sk-child" />
+          <div className="sk-circle5 sk-child" />
+          <div className="sk-circle6 sk-child" />
+          <div className="sk-circle7 sk-child" />
+          <div className="sk-circle8 sk-child" />
+          <div className="sk-circle9 sk-child" />
+          <div className="sk-circle10 sk-child" />
+          <div className="sk-circle11 sk-child" />
+          <div className="sk-circle12 sk-child" />
+        </div>
+      );
     } else {
       return (
         <div>
@@ -105,7 +121,7 @@ class Foods extends Component {
                       <i className="small material-icons">short_text</i>
                     </div>
                     <p className="card-title">{food.name}</p>
-                    <p>100 grams</p>
+                    <p>{food.measure}</p>
                   </div>
                   <div className="card-action grey darken-3">
                     <div className="white-text">
@@ -113,7 +129,7 @@ class Foods extends Component {
                     </div>
                     <span className="white-text">Nutrient Content: </span>
                     <span className="white-text">
-                      {food.nutrients[0].gm}{" "}
+                      {food.nutrients[0].value}{" "}
                       <small>{food.nutrients[0].unit}</small>
                     </span>
                   </div>
