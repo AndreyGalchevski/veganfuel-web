@@ -29,7 +29,7 @@ body {
 }
 #nprogress .bar {
   height: 3px;
-  background: #eeeeee;
+  background: #f50057;
 }
 #nprogress .spinner-icon {
   border-top-color: #eeeeee;
