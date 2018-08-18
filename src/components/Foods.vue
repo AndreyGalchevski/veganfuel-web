@@ -10,6 +10,7 @@
 						<option value="1600">Legumes</option>
 						<option value="1200">Nuts and Seeds</option>
 						<option value="1100">Vegetables</option>
+						<option value="9999">All</option>
 					</select>
 				</div>
 
@@ -18,13 +19,12 @@
 						id="search"
 						type="text"
 						class="validate"
-						:value="searchTerm"
-						onchange="onChangeHandler"
+						v-model="searchTerm"
 					/>
 					<label for="search">Search</label>
 				</div>
 
-					<div v-for="food in foods" :key="food.name" class="col s12 m6 offset-m3">
+					<div v-for="food in filteredFoods" :key="food.name" class="col s12 m6 offset-m3">
 						<div class="card z-depth-4">
 							<div class="card-content blue-text">
 								<div>
@@ -90,24 +90,34 @@ export default {
       ]
     };
   },
+  computed: {
+    filteredFoods() {
+      return this.foods.filter(food => {
+        return food.name.toLowerCase().includes(this.searchTerm.toLowerCase());
+      });
+    }
+  },
   mounted() {
     this.selectInstance = M.FormSelect.init(this.$refs.mySelect, {});
     this.displayData();
   },
   methods: {
     createUrl(foodGroup) {
-      // this.foodGroups.forEach(foodGroup => {
-      //   this.url += `&fg=${foodGroup.id}`;
-      // });
       let url = "";
-      url = this.baseUrl + `&fg=${foodGroup}`;
-      url += `&nutrients=${this.$route.params.nutrientId}`;
+      url = this.baseUrl + `&nutrients=${this.$route.params.nutrientId}`;
+      if (foodGroup === "9999") {
+        this.foodGroups.forEach(foodGroup => {
+          url += `&fg=${foodGroup.id}`;
+        });
+      } else {
+        url += `&fg=${foodGroup}`;
+      }
       return url;
     },
     async fetchData(url) {
       try {
-        this.isLoading = true;
         console.log(url);
+        this.isLoading = true;
         const response = await axios.get(url);
         this.foods = response.data.report.foods;
         this.pageTitle = response.data.report.foods[0].nutrients[0].nutrient;
@@ -117,16 +127,12 @@ export default {
       }
     },
     selectFoodGroup(e) {
-      console.log(e.target.value);
       this.currentFoodGroup = e.target.value;
       this.displayData();
     },
     displayData() {
       let url = this.createUrl(this.currentFoodGroup);
       this.fetchData(url);
-    },
-    onChangeHandler(e) {
-      this.searchTerm = e.target.value;
     }
   }
 };

@@ -47,14 +47,14 @@ export default {
   width: 100%;
 }
 footer {
-  padding-top: 0.2em;
-  padding-bottom: 0.1em;
+  padding-top: 0.4em;
+  padding-bottom: 0.3em;
 }
 .row {
   margin-bottom: 0px;
 }
 .fab {
-  font-size: 1.5em;
+  font-size: 2.5em;
   color: white;
   margin-left: 0.6em;
   margin-right: 0.6em;
