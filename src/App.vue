@@ -28,6 +28,7 @@ body {
   text-align: center;
 }
 #nprogress .bar {
+  height: 3px;
   background: #eeeeee;
 }
 #nprogress .spinner-icon {

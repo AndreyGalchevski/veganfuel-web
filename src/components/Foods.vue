@@ -50,7 +50,6 @@
 </template>
 
 <script>
-/* eslint-disable */
 import M from "materialize-css/dist/js/materialize.js";
 import { Api } from "../api/api";
 

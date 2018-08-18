@@ -7,6 +7,7 @@ let axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(config => {
   NProgress.start();
+  NProgress.set(0.4);
   return config;
 });
 
