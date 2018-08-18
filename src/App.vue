@@ -27,4 +27,11 @@ body {
   font-family: "Montserrat", sans-serif;
   text-align: center;
 }
+#nprogress .bar {
+  background: #eeeeee;
+}
+#nprogress .spinner-icon {
+  border-top-color: #eeeeee;
+  border-left-color: #eeeeee;
+}
 </style>

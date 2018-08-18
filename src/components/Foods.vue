@@ -51,17 +51,15 @@
 
 <script>
 /* eslint-disable */
-
 import M from "materialize-css/dist/js/materialize.js";
-import axios from "axios";
+import { Api } from "../api/api";
 
 export default {
   data() {
     return {
       selectInstance: null,
-      baseUrl:
-        "http://api.nal.usda.gov/ndb/nutrients/?format=json&max=50&api_key=QQ4HZzADiGZBvTyk5606Fb1axjFItcxuhYfct882&sort=c",
-      isLoading: false,
+      baseUrlQuery:
+        "?format=json&max=1500&api_key=QQ4HZzADiGZBvTyk5606Fb1axjFItcxuhYfct882&sort=c",
       searchTerm: "",
       foods: [],
       pageTitle: "",
@@ -104,7 +102,7 @@ export default {
   methods: {
     createUrl(foodGroup) {
       let url = "";
-      url = this.baseUrl + `&nutrients=${this.$route.params.nutrientId}`;
+      url = this.baseUrlQuery + `&nutrients=${this.$route.params.nutrientId}`;
       if (foodGroup === "9999") {
         this.foodGroups.forEach(foodGroup => {
           url += `&fg=${foodGroup.id}`;
@@ -116,12 +114,9 @@ export default {
     },
     async fetchData(url) {
       try {
-        console.log(url);
-        this.isLoading = true;
-        const response = await axios.get(url);
+        const response = await Api.get(url);
         this.foods = response.data.report.foods;
         this.pageTitle = response.data.report.foods[0].nutrients[0].nutrient;
-        this.isLoading = false;
       } catch (error) {
         throw error;
       }
