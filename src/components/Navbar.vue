@@ -3,7 +3,7 @@
 		<nav>
 			<div class="nav-wrapper blue">
 				<span class="brand-logo center">VeganFuel</span>
-				<router-link class="back-icon left" to="/">
+				<router-link v-if="this.$route.path !== '/'" class="back-icon left" to="/">
 					<i class="fas fa-chevron-left" />
 				</router-link>
 			</div>
@@ -12,26 +12,7 @@
 </template>
 
 <script>
-import M from "materialize-css/dist/js/materialize.js";
-
-export default {
-  name: "navbar",
-  data() {
-    return {
-      sideNavInstance: null
-    };
-  },
-  mounted() {
-    this.sideNavInstance = M.Sidenav.init(this.$refs.sideNavRef, {});
-  },
-  methods: {
-    closeSideNav() {
-      if (this.sideNavInstance.isOpen) {
-        this.sideNavInstance.close();
-      }
-    }
-  }
-};
+export default {};
 </script>
 
 <style scoped>

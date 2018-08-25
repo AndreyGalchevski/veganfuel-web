@@ -1,76 +1,15 @@
 <template>
 	<div class="home container">
 		<div class="row">
-			<div class="card col s6">
-				<div class="card-image">
-					<img :src="nutrients[0].image">
-					<span class="card-title">
-						<router-link :to="'/foods/' + nutrients[0].id">{{nutrients[0].name}}</router-link>
-					</span>
-				</div>
-			</div>
-			<div class="card col s6">
-				<div class="card-image">
-					<img :src="nutrients[1].image">
-					<span class="card-title">
-						<router-link :to="'/foods/' + nutrients[0].id">{{nutrients[1].name}}</router-link>
-					</span>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="card col s6">
-				<div class="card-image">
-					<img :src="nutrients[2].image">
-					<span class="card-title">
-						<router-link :to="'/foods/' + nutrients[2].id">{{nutrients[2].name}}</router-link>
-					</span>
-				</div>
-			</div>
-			<div class="card col s6">
-				<div class="card-image">
-					<img :src="nutrients[3].image">
-					<span class="card-title">
-						<router-link :to="'/foods/' + nutrients[3].id">{{nutrients[3].name}}</router-link>
-					</span>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="card col s6">
-				<div class="card-image">
-					<img :src="nutrients[4].image">
-					<span class="card-title">
-						<router-link :to="'/foods/' + nutrients[4].id">{{nutrients[4].name}}</router-link>
-					</span>
-				</div>
-			</div>
-			<div class="card col s6">
-				<div class="card-image">
-					<img :src="nutrients[5].image">
-					<span class="card-title">
-						<router-link :to="'/foods/' + nutrients[5].id">{{nutrients[5].name}}</router-link>
-					</span>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-
-			<div class="card col s6">
-				<div class="card-image">
-					<img :src="nutrients[6].image">
-					<span class="card-title">
-						<router-link :to="'/foods/' + nutrients[6].id">{{nutrients[6].name}}</router-link>
-					</span>
-				</div>
-			</div>
-			<div class="card col s6">
-				<div class="card-image">
-					<img :src="nutrients[7].image">
-					<span class="card-title">
-						<router-link :to="'/foods/' + nutrients[7].id">{{nutrients[7].name}}</router-link>
-					</span>
-				</div>
+			<div v-for="nutrient in nutrients" :key="nutrient.id">
+				<router-link :to="'/foods/' + nutrient.id">
+					<div class="card col s6 m4">
+							<div class="card-image">
+								<img :src="nutrient.image">
+								<span class="card-title">{{nutrient.name}}</span>
+						</div>
+					</div>
+				</router-link>
 			</div>
 		</div>
 	</div>
@@ -103,7 +42,7 @@ export default {
           id: "851",
           name: "Omega-3",
           image:
-            "https://res.cloudinary.com/dqvimfd8b/image/upload/v1534237226/veganfuel-web/home/4.png"
+            "https://res.cloudinary.com/dqvimfd8b/image/upload/v1535206231/veganfuel-web/home/4a.png"
         },
         {
           id: "305",
@@ -131,13 +70,51 @@ export default {
         }
       ]
     };
+  },
+  mounted() {
+    let cards = document.querySelectorAll(".card");
+    for (let i = 0; i < cards.length; i++) {
+      if (i % 2 === 0) {
+        cards[i].classList.add("offset-m2");
+        cards[i].style.paddingRight = "2px";
+      } else {
+        cards[i].style.paddingLeft = "2px";
+      }
+    }
   }
 };
 </script>
 
 <style scoped>
+.home {
+  position: absolute;
+  top: 12.5%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+}
 .row .col {
   padding: 0;
+  margin-bottom: 0px;
+}
+
+.row {
+  margin-bottom: 0px;
+}
+
+.card {
+  height: 8rem !important;
+}
+
+.card-image img {
+  height: 8rem !important;
+}
+
+.card-title {
+  font-family: "Pacifico", cursive;
+  font-size: 1.7rem;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 </style>
-

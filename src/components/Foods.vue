@@ -115,7 +115,14 @@ export default {
       try {
         const response = await Api.get(url);
         this.foods = response.data.report.foods;
-        this.pageTitle = response.data.report.foods[0].nutrients[0].nutrient;
+        if (
+          response.data.report.foods[0].nutrients[0].nutrient ===
+          "18:3 n-3 c,c,c (ALA)"
+        ) {
+          this.pageTitle = "Omega-3";
+        } else {
+          this.pageTitle = response.data.report.foods[0].nutrients[0].nutrient;
+        }
       } catch (error) {
         throw error;
       }
