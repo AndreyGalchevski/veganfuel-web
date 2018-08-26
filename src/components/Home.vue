@@ -7,7 +7,7 @@
 							<div class="card-image">
 								<img :src="nutrient.image">
 								<span class="card-title">{{nutrient.name}}</span>
-						</div>
+							</div>
 					</div>
 				</router-link>
 			</div>
@@ -103,11 +103,11 @@ export default {
 }
 
 .card {
-  height: 8rem !important;
+  height: 7.6rem !important;
 }
 
 .card-image img {
-  height: 8rem !important;
+  height: 7.6rem !important;
 }
 
 .card-title {
@@ -116,5 +116,9 @@ export default {
   color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
+  padding: 0px !important;
+  bottom: 31% !important;
+  left: 1% !important;
+  right: 1% !important;
 }
 </style>

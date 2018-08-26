@@ -3,9 +3,9 @@
 		<nav>
 			<div class="nav-wrapper blue">
 				<span class="brand-logo center">VeganFuel</span>
-				<router-link v-if="this.$route.path !== '/'" class="back-icon left" to="/">
+				<!-- <router-link v-if="this.$route.path !== '/'" class="back-icon left" to="/">
 					<i class="fas fa-chevron-left" />
-				</router-link>
+				</router-link> -->
 			</div>
 		</nav>
 	</div>
