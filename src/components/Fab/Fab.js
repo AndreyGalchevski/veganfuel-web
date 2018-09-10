@@ -6,13 +6,27 @@ class Fab extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      fabInstance: null
+      fabInstance: null,
+      clickCounter: 0
     };
   }
 
+  handleClick = () => {
+    this.setState(state => {
+      clickCounter: state.clickCounter + 1;
+    });
+
+    if (this.state.clickCounter >= 2) {
+      this.setState({ clickCounter: 0 });
+      this.state.fabInstance.close();
+    }
+  };
+
   componentDidMount() {
     let fabElelement = document.querySelector('.fixed-action-btn');
-    let fabInstance = M.FloatingActionButton.init(fabElelement, {});
+    let fabInstance = M.FloatingActionButton.init(fabElelement, {
+      hoverEnabled: false
+    });
     this.setState({
       fabInstance
     });
@@ -20,7 +34,7 @@ class Fab extends React.Component {
 
   render() {
     return (
-      <div className="fixed-action-btn">
+      <div className="fixed-action-btn" onClick={this.handleClick}>
         <a className="btn-floating btn-large pink darken-1">
           <i className="fas fa-share-alt" />
         </a>

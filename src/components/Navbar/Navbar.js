@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -6,7 +7,9 @@ const Navbar = () => {
     <div className="navbar-fixed">
       <nav>
         <div className="nav-wrapper blue">
-          <span className="brand-logo center">VeganFuel</span>
+          <Link to="/" className="brand-logo center">
+            VeganFuel
+          </Link>
         </div>
       </nav>
     </div>
