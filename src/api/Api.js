@@ -1,8 +1,8 @@
-import axios from "axios";
-import NProgress from "nprogress/nprogress.js";
+import axios from 'axios';
+import NProgress from 'nprogress/nprogress.js';
 
 let axiosInstance = axios.create({
-  baseURL: "https://api.nal.usda.gov/ndb/nutrients"
+  baseURL: 'https://api.nal.usda.gov/ndb/nutrients'
 });
 
 axiosInstance.interceptors.request.use(config => {

@@ -1,0 +1,23 @@
+.select-dropdown {
+  color: #424242;
+}
+
+.card-action {
+  font-size: 20px;
+}
+
+.search-input {
+  margin-bottom: 20px;
+}
+
+input#search {
+  border-bottom-color: #2196f3 !important;
+}
+
+input#search {
+  color: #424242;
+}
+
+label.active {
+  color: #2196f3 !important;
+}

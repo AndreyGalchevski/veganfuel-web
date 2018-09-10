@@ -1,0 +1,23 @@
+.fixed-action-btn {
+  bottom: 30px;
+}
+
+.btn-floating .fab {
+  margin-left: 0;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.twitter {
+  background-color: #1da1f2;
+}
+
+.linkedin {
+  background-color: #0077b5;
+}
+
+.google-plus {
+  background-color: #dd4b39;
+}

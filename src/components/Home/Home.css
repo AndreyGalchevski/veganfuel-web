@@ -1,0 +1,35 @@
+.home {
+  position: absolute;
+  top: 12.5%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+}
+.home .row .col {
+  padding: 0;
+  margin-bottom: 0px;
+}
+
+.home .row {
+  margin-bottom: 0px;
+}
+
+.home-card {
+  height: 7.6rem !important;
+}
+
+.home-card .card-image img {
+  height: 7.6rem !important;
+}
+
+.home-card .card-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.7rem;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  padding: 0px !important;
+  bottom: 31% !important;
+  left: 1% !important;
+  right: 1% !important;
+}

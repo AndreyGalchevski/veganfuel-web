@@ -1,55 +1,39 @@
 {
-  "name": "veganfuel-web",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vegan-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "css-loader": "^1.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "prop-types": "^15.6.2",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "express": "^4.16.3",
-    "materialize-css": "^1.0.0-rc.2",
+    "materialize-css": "^1.0.0",
     "nprogress": "^0.2.0",
-    "vue": "^2.5.17",
-    "vue-router": "^3.0.1"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.1",
-    "@vue/cli-plugin-eslint": "^3.0.1",
-    "@vue/cli-service": "^3.0.1",
-    "vue-template-compiler": "^2.5.17"
-  },
-  "babel": {
-    "presets": [
-      "@vue/app"
-    ]
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint",
-      "ecmaVersion": 7
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-router-dom": "^4.3.1"
+  }
 }
