@@ -40,7 +40,7 @@ class Fab extends React.Component {
           <li>
             <a
               className="btn-floating facebook"
-              href="https://www.facebook.com/sharer/sharer.php?u=https://veganfuel.herokuapp.com"
+              href="https://www.facebook.com/sharer/sharer.php?u=https://www.veganfuel.org"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -50,7 +50,7 @@ class Fab extends React.Component {
           <li>
             <a
               className="btn-floating twitter"
-              href="https://twitter.com/intent/tweet?url=https://veganfuel.herokuapp.com/&text=Check out this cool vegan nutrition app!&hashtags=vegan"
+              href="https://twitter.com/intent/tweet?url=https://www.veganfuel.org/&text=Check out this cool vegan nutrition app!&hashtags=vegan"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -60,7 +60,7 @@ class Fab extends React.Component {
           <li>
             <a
               className="btn-floating linkedin"
-              href="https://www.linkedin.com/shareArticle?url=https://veganfuel.herokuapp.com"
+              href="https://www.linkedin.com/shareArticle?url=https://www.veganfuel.org"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -70,7 +70,7 @@ class Fab extends React.Component {
           <li>
             <a
               className="btn-floating google-plus"
-              href="https://plus.google.com/share?url=https://veganfuel.herokuapp.com"
+              href="https://plus.google.com/share?url=https://www.veganfuel.org"
               target="_blank"
               rel="noopener noreferrer"
             >
