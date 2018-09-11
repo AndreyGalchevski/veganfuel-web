@@ -1,4 +1,5 @@
 import React from 'react';
+import M from 'materialize-css/dist/js/materialize.js';
 import './Foods.css';
 import { Api } from '../../api/Api';
 
@@ -51,8 +52,10 @@ class Foods extends React.Component {
     return url;
   }
 
-  fetchData(url) {
-    Api.get(url).then(response => {
+  async fetchData(url) {
+    try {
+      let response = await Api.get(url);
+
       this.setState({
         foods: response.data.report.foods
       });
@@ -66,7 +69,9 @@ class Foods extends React.Component {
           pageTitle: nutrientName
         });
       }
-    });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   handleSelect = e => {

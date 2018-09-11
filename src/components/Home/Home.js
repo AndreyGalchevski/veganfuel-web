@@ -86,7 +86,7 @@ class Home extends React.Component {
             <Link to={{ pathname: `/foods/${nutrient.id}` }} key={nutrient.id}>
               <div className="home-card card col s6 m4" key={nutrient.id}>
                 <div className="card-image">
-                  <img src={nutrient.image} />
+                  <img src={nutrient.image} alt="" />
                   <span className="card-title">{nutrient.name}</span>
                 </div>
               </div>

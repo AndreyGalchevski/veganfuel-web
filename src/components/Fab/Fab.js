@@ -12,9 +12,7 @@ class Fab extends React.Component {
   }
 
   handleClick = () => {
-    this.setState(state => {
-      clickCounter: state.clickCounter + 1;
-    });
+    this.setState(state => state.clickCounter + 1);
 
     if (this.state.clickCounter >= 2) {
       this.setState({ clickCounter: 0 });
@@ -44,6 +42,7 @@ class Fab extends React.Component {
               className="btn-floating facebook"
               href="https://www.facebook.com/sharer/sharer.php?u=https://veganfuel.herokuapp.com"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <i className="fab fa-facebook-f" />
             </a>
@@ -53,6 +52,7 @@ class Fab extends React.Component {
               className="btn-floating twitter"
               href="https://twitter.com/intent/tweet?url=https://veganfuel.herokuapp.com/&text=Check out this cool vegan nutrition app!&hashtags=vegan"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <i className="fab fa-twitter" />
             </a>
@@ -62,6 +62,7 @@ class Fab extends React.Component {
               className="btn-floating linkedin"
               href="https://www.linkedin.com/shareArticle?url=https://veganfuel.herokuapp.com"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <i className="fab fa-linkedin-in" />
             </a>
@@ -71,6 +72,7 @@ class Fab extends React.Component {
               className="btn-floating google-plus"
               href="https://plus.google.com/share?url=https://veganfuel.herokuapp.com"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <i className="fab fa-google-plus-g" />
             </a>
